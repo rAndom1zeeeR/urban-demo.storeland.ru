@@ -1,0 +1,57 @@
+<div class="contact-info row"> 
+  {% IF FORM_SEND_OK %}
+    <div class="{% IF FORM_NOTICE_IS_GOOD %}success{% ELSE %}warning{% ENDIF %}">{FORM_NOTICE | nl2br}</div>
+  {% ENDIF %}
+    {% IFNOT FORM_SEND_OK %}
+    <div class="col-sm-6 col-sms-12 col-smb-12 first">
+      <div class="col-account">
+        <h5>Форма связи</h5>
+        <form method="post" action="{FEEDBACK_URL}" class="feedbackForm" enctype="multipart/form-data">
+          <input type="hidden" name="hash" value="{HASH}" />
+          <!-- Набор полей которые не видит пользователь, но видят боты. Когда они их заполняют мы точно знаем, что их прислал нам бот и мы не сохраняем подобный отзыв о товаре, а боту отправившему отзыв сообщаем, что отзыв добавлен успешно, но будет отображён здесь после прохождения модерации -->
+          {ANTISPAM_CODE}
+          <div class="form-list">
+            <div class="fields">
+              <label for="feedback_name" class="required">Представьтесь, пожалуйста: <em>*</em></label>
+              <input id="feedback_name" placeholder="Представьтесь, пожалуйста" type="text" name="form[{ANTISPAM_FORM_FIELD_NAME_FEEDBACK_NAME}]"  value="{FORM_FEEDBACK_NAME}" maxlength="50"  class="inputText">
+            </div>
+            <div class="fields">
+              <label for="feedback_email" class="required">Электронная почта: <em>*</em></label>
+              <input id="feedback_email" placeholder="Электронная почта" type="text"  name="form[{ANTISPAM_FORM_FIELD_NAME_FEEDBACK_EMAIL}]"  value="{FORM_FEEDBACK_EMAIL}" maxlength="255" class="inputText email">
+            </div>
+            <div class="fields">
+              <label for="feedback_phone" class="required">Телефон: </label>
+              <input id="feedback_phone" placeholder="Телефон" type="text" name="form[Телефон]"  value="{FORM_FEEDBACK_PHONE}" maxlength="50"  class="inputText">
+            </div>
+            <div class="fields">
+              <label for="feedback_message" class="required">Текст сообщения: <em>*</em></label>
+              <textarea id="feedback_message" placeholder="Текст сообщения" rows="4" name="form[{ANTISPAM_FORM_FIELD_NAME_FEEDBACK_MESSAGE}]" class="textarea">{FORM_FEEDBACK_MESSAGE}</textarea>
+            </div>
+            <div class="file">
+              <label for="feedback_file">Прикрепить файл</label>
+              <div class="input-box">
+                <input id="feedback_file" type="file" name="form[assets_file]" value=""  class="">
+              </div>
+            </div>
+          </div>
+          <div class="pp">Нажимая на кнопку Отправить, Вы соглашаетесь с <a href="#">правилами обработки данных</a></div>
+          <button type="submit" title="Отправить" class="button"><span>Отправить</span></button>
+        </form>
+      </div>
+    </div>
+    {% ENDIF %}
+    <div class="col-sm-6 col-sms-12 col-smb-12 second">
+      <div class="col-account">
+        <h5>Наши контакты</h5>
+        <div class="block-contact">
+          {% IF SETTINGS_STORE_REGION %}<p><em class="fa fa-map-marker">&nbsp;</em>{SETTINGS_STORE_REGION}</p>{% ENDIF %}
+          {% IF SETTINGS_STORE_WORK_TIME %}<p><em class="fa fa-clock-o">&nbsp;</em>Режим работы: {SETTINGS_STORE_WORK_TIME}</p>{% ENDIF %}
+          {% IF SETTINGS_STORE_PHONE_NUMBER1 %}<p><em class="fa fa-phone">&nbsp;</em>Телефон: <a href="tel:{SETTINGS_STORE_PHONE_COUNTRY_CODE1}{SETTINGS_STORE_PHONE_CITY_CODE1}{SETTINGS_STORE_PHONE_NUMBER1}">{SETTINGS_STORE_PHONE_COUNTRY_CODE1}({SETTINGS_STORE_PHONE_CITY_CODE1}){SETTINGS_STORE_PHONE_NUMBER1}</a></p>{% ENDIF %}
+          {% IF SETTINGS_STORE_PHONE_NUMBER2 %}<p><em class="fa fa-phone">&nbsp;</em>Телефон: <a href="tel:{SETTINGS_STORE_PHONE_COUNTRY_CODE2}{SETTINGS_STORE_PHONE_CITY_CODE2}{SETTINGS_STORE_PHONE_NUMBER2}">{SETTINGS_STORE_PHONE_COUNTRY_CODE2}({SETTINGS_STORE_PHONE_CITY_CODE2}){SETTINGS_STORE_PHONE_NUMBER2}</a></p>{% ENDIF %}
+          {% IF SETTINGS_STORE_PHONE_NUMBER3 %}<p><em class="fa fa-fax">&nbsp;</em>Телефон: <a href="tel:{SETTINGS_STORE_PHONE_COUNTRY_CODE3}{SETTINGS_STORE_PHONE_CITY_CODE3}{SETTINGS_STORE_PHONE_NUMBER3}">{SETTINGS_STORE_PHONE_COUNTRY_CODE3}({SETTINGS_STORE_PHONE_CITY_CODE3}){SETTINGS_STORE_PHONE_NUMBER3}</a></p>{% ENDIF %}
+          {% IF SETTINGS_STORE_EMAIL_MAIN %}<p><em class="fa fa-envelope">&nbsp;</em>Email: <a href="mailto:{SETTINGS_STORE_EMAIL_MAIN}">{SETTINGS_STORE_EMAIL_MAIN}</a></p>{% ENDIF %}
+          {% IF SETTINGS_STORE_SKYPE %}<p><em class="fa fa-skype">&nbsp;</em>Skype: <a href="skype:{SETTINGS_STORE_SKYPE}?call">{SETTINGS_STORE_SKYPE}</a></p>{% ENDIF %}
+        </div>
+      </div>
+    </div>
+</div>
