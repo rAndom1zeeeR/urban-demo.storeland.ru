@@ -25,6 +25,7 @@
   <link rel="stylesheet" type="text/css" href="{FORALL_STYLES_PATH}fancybox/2.1.4/jquery.fancybox.css">
   <link rel="stylesheet" type="text/css" href="{FORALL_STYLES_PATH}jquery-ui/jquery.ui.all.min.css">
   <link rel="stylesheet" type="text/css" href="/design/font-awesome.css?design=urban">
+	<link rel="stylesheet" type="text/css" href="/design/icomoon.css?design=glamour" />
   <link rel="stylesheet" type="text/css" href="{ASSETS_STYLES_PATH}main.css?design=urban">
   <!-- Скрипты магазина -->
   <script type="text/javascript">var zoomloaderPath = '{ASSETS_IMAGES_PATH}Ajaxloader.gif?design=urban';</script>
@@ -1147,6 +1148,12 @@
                 {% IF SETTINGS_STORE_PHONE_NUMBER3 %}<p class="phone"><a href="tel:{SETTINGS_STORE_PHONE_COUNTRY_CODE3}{SETTINGS_STORE_PHONE_CITY_CODE3}{SETTINGS_STORE_PHONE_NUMBER3}"><i class="fa fa-phone"></i>{SETTINGS_STORE_PHONE_COUNTRY_CODE3}({SETTINGS_STORE_PHONE_CITY_CODE3}){SETTINGS_STORE_PHONE_NUMBER3}</a></p>{% ENDIF %}
                 {% IF SETTINGS_STORE_SKYPE %}<p class="skype"><a href="skype:{SETTINGS_STORE_SKYPE}?call"><i class="fa fa-skype"></i>{SETTINGS_STORE_SKYPE}</a></span></p>{% ENDIF %}
               </div>
+	            <ul class="social-links">
+		            <li><a class="whatsapp fa fa-whatsapp" href="https://whatsapp.com/" title="whatsapp.com" target="_blank"><span>whatsapp</span></a></li>
+		            <li><a class="telegram icon-telegram" href="https://telegram.com/" title="telegram.com" target="_blank"><span>telegram</span></a></li>
+		            <li><a class="tiktok icon-tiktok" href="https://tiktok.com/" title="tiktok.com" target="_blank"><span>tiktok</span></a></li>
+		            <li><a class="viber icon-viber" href="https://viber.com/" title="viber.com" target="_blank"><span>viber</span></a></li>
+	            </ul>
             </div>
             <div class="col-xs-12 copyright-footer">
               <ul class="social-links">
@@ -1155,11 +1162,23 @@
                 <li><a class="odnoklassniki fa fa-odnoklassniki" href="https://ok.ru/" title="Odnoklassniki" target="_blank"><span>odnoklassniki</span></a></li>
                 <li><a class="vk fa fa-vk" href="https://vk.com/" title="VK.com" target="_blank"><span>vk</span></a></li>
                 <li><a class="instagram fa fa-instagram" href="https://instagram.com/" title="Instagram.com" target="_blank"><span>instagram</span></a></li>
+	              <li><a class="youtube fa fa-youtube-play" href="https://youtube.com/" title="youtube.com" target="_blank"><span>youtube</span></a></li>
               </ul>
               <p>{SETTINGS_STORE_NAME} &copy; {DATE_YEAR}. Все права защищены.</p>
               <p>{SETTINGS_STORE_ORG_NAME}.</p>
               <p>{COPYRIGHT_FOR_DESIGN_URBAN}</p>
               <p>{SETTINGS_STORE_HTML_CODE}</p>
+	            <div class="payments">
+		            <i class="icon-mastercard"></i>
+		            <i class="icon-mir"></i>
+		            <i class="icon-qiwi"></i>
+		            <i class="icon-sber"></i>
+		            <i class="icon-visa"></i>
+		            <i class="icon-walletone"></i>
+		            <i class="icon-webmoney"></i>
+		            <i class="icon-yandex"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
+		            <i class="icon-yandexmoney"></i>
+	            </div>
             </div>
           </div>
         </div>
