@@ -86,7 +86,7 @@
 .icon-yandex .path2:before {
   content: "\e914";
   margin-left: -1em;
-  color: none;
+  color: initial;
 }
 .icon-yandex .path3:before {
   content: "\e915";
